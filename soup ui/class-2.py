@@ -40,22 +40,9 @@ print('addition =', add(10, 12))
 
 
 from zeep import Client
-
-# client = Client(wsdl = 'http://www.webservicex.net/ConvertSpeed.asmx?WSDL')
-# result = client.service.ConvertSpeed(
-#     100, 'kilometersPerhour', 'milesPerhour')
-
-# assert result == 62.137
-
-
-
-
-
 url = 'http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL'
-
 client = Client(wsdl = url)
-result = client.service.ListOfCountryNamesGroupedByContinent()
-# print(result)
+result = client.service.ListOfCountryNamesGroupedByContinent()print(result)
 
 
  

@@ -1,17 +1,7 @@
-
-
-
-# result = any(int(x) >= int(y) for x, y in zip(min_com_ver.split('.'), version.split('.')))
-# result = any(int(x) <= int(y) for x, y in zip(max_com_ver.split('.'), version.split('.')))
-
 def compatibilty_check(min_com_ver,max_com_ver,version):
     # mininum
     value1 = True
     for x, y in zip(min_com_ver.split('.'), version.split('.')):
-        # print(x,y,int(x) == int(y))
-        # print(x,y,int(x) < int(y))
-        # print(x,y,int(x) > int(y))
-
         if int(x) == int(y):
             continue
         elif int(x) < int(y):
