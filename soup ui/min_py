@@ -1,0 +1,68 @@
+
+
+
+# result = any(int(x) >= int(y) for x, y in zip(min_com_ver.split('.'), version.split('.')))
+# result = any(int(x) <= int(y) for x, y in zip(max_com_ver.split('.'), version.split('.')))
+
+def compatibilty_check(min_com_ver,max_com_ver,version):
+    # mininum
+    value1 = True
+    for x, y in zip(min_com_ver.split('.'), version.split('.')):
+        # print(x,y,int(x) == int(y))
+        # print(x,y,int(x) < int(y))
+        # print(x,y,int(x) > int(y))
+
+        if int(x) == int(y):
+            continue
+        elif int(x) < int(y):
+            value1 = True
+            break
+        else:
+            value1 = False
+            break
+
+
+    value2 = True
+    # mixinum
+    for x, y in zip(max_com_ver.split('.'), version.split('.')):
+        # print(x,y,int(x) == int(y))
+        # print(x,y,int(x) < int(y))
+        # print(x,y,int(x) > int(y))        
+        if int(x) == int(y):
+            continue
+        elif int(x) > int(y):
+            value2 = True
+            break
+        else:
+            value2 = False
+            break
+    # print(result)
+
+    result =all([value1,value2])
+
+    if result:
+        print('Compatible')
+        print(min_com_ver,version,max_com_ver)
+
+    else:
+        print('Not Compatible')
+
+
+min_com_ver = '10.5.445.0'
+max_com_ver = '10.5.999.9'
+print('#'*150)
+version = '10.5.787.1'
+compatibilty_check(min_com_ver,max_com_ver,version)
+print('#'*150)
+
+version = '10.3.787.1'
+compatibilty_check(min_com_ver,max_com_ver,version)
+print('#'*150)
+
+version = '10.5.1787.1'
+compatibilty_check(min_com_ver,max_com_ver,version)
+
+
+print('#'*150)
+version = '10.5.446.3'
+compatibilty_check(min_com_ver,max_com_ver,version)

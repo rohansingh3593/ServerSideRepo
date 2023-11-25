@@ -1,0 +1,55 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+
+xmlns:urn="urn:com:ssn:schema:service:v2.7.1:JobManager.xsd" 
+
+xmlns:urn1="urn:com:ssn:schema:service:v2.7.1:CommonEnumerations.xsd">
+
+<soapenv:Header/>
+
+<soapenv:Body>
+
+<urn:AddPingJob AutoActivate="true">
+
+<urn:JobInfo>
+
+<urn:Name>Job_1</urn:Name>
+
+<urn:Description>This is a meter ping test job</urn:Description>
+
+</urn:JobInfo>
+
+<urn:PingJob IsBackboneJob="false">
+
+<urn:AppLevelPing NumberPings="1">
+
+<urn:DeviceMacID>08:68:71:10:60:45:79:94</urn:DeviceMacID>
+
+</urn:AppLevelPing>
+
+<urn:NumberRetries>0</urn:NumberRetries>
+
+<urn:Priority>
+
+<urn1:Name>JOB_PRIORITY_HIGH</urn1:Name>
+
+</urn:Priority>
+
+<urn:PushResults>
+
+<urn:PushResultsToJMS TimeoutThresholdInSeconds="35"/>
+
+</urn:PushResults>
+
+</urn:PingJob>
+
+<urn:Schedule>
+
+<urn:Immediate/>
+
+</urn:Schedule>
+
+</urn:AddPingJob>
+
+</soapenv:Body>
+
+</soapenv:Envelope>
