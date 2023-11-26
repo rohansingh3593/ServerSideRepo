@@ -1,7 +1,7 @@
 from tkinter import *
 import openpyxl
-from vari import *
-path = "Interp.xlsx"
+from vari_1 import *
+path = "full.xlsx"
 wb_obj = openpyxl.load_workbook(path)
 cell = []
 button=[]
